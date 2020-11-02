@@ -1,14 +1,14 @@
 ## Importar de API a MongoDB
 
 La carpeta `Debug` guarda un archivo de un único uso `getDataFromApi`.
-Importa 10000 películas de la API a la base de datos.
+<br>Importa 10000 películas de la API a la base de datos.
 
 <br>
 
 ## /showMovies
 
 **Método**: GET
-**Descripción**: Devuelve todas las películas con un máximo de 30. 
+<br>**Descripción**: Devuelve todas las películas con un máximo de 30. 
 
 **Body**:
 
@@ -40,7 +40,7 @@ Fecha de salida de la película.
 ## /showMoviesPopularity
 
 **Método**: GET
-**Descripción**: Devuelve las películas más populares de todas las películas en base de datos con un máximo de 30.
+<br>**Descripción**: Devuelve las películas más populares de todas las películas en base de datos con un máximo de 30.
 
 **Body de ejemplo**:
 
@@ -63,11 +63,11 @@ La película más popular es:
 ## /showMoviesNewest
 
 **Método**: GET
-**Descripción**: Devuelve las películas más recientes de todas las películas en base de datos con un máximo de 30.
+<br>**Descripción**: Devuelve las películas más recientes de todas las películas en base de datos con un máximo de 30.
 
 <br>
 
 ## /showUpcoming
 
 **Método**: GET
-**Descripción**: Devuelve las películas que van a estrenarse próximamente con un máximo de 30.
+<br>**Descripción**: Devuelve las películas que van a estrenarse próximamente con un máximo de 30.
