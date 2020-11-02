@@ -1,3 +1,17 @@
+# ¿Qué es? 👀
+
+Es un fake de Netflix hecho entre [Javier Garcia](https://github.com/javigarcias), [Rosa Sabater](https://github.com/RosaSabater) y [Pablo Antonini](https://github.com/Antonini333) que usa:
+
+- Frontend: 🌌 
+- Backend: 🔸 NodeJS + Express + Json Web Token
+- DB: 🍃 MongoDB 
+
+Durante el desarrollo hemos usado [este tablón de Trello]().
+
+
+<br>
+
+
 ## Importar de API a MongoDB
 
 La carpeta `Debug` guarda un archivo de un único uso `getDataFromApi`.
