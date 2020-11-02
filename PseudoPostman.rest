@@ -1,0 +1,14 @@
+# @url = 
+@url = http://localhost:3000
+
+###
+GET {{url}}/showMovies
+
+###
+GET {{url}}/showMoviesPopularity
+
+### 
+GET {{url}}/showMoviesNewest
+
+###
+GET {{url}}/showUpcoming
