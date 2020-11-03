@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "Es un fake de Netflix hecho entre [Javier Garcia](https://github.com/javigarcias), [Rosa Sabater](https://github.com/RosaSabater) y [Pablo Antonini](https://github.com/Antonini333) que usa:",
   "main": "index.js",
+<<<<<<< HEAD
   "dependencies": {
     "axios": "^0.21.0",
     "express": "^4.17.1",
     "mongoose": "^5.10.11"
   },
   "devDependencies": {},
+=======
+>>>>>>> 81a2486e21b4209ff01440c77b1b8f80c10422a6
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,11 +19,23 @@
     "type": "git",
     "url": "git+https://github.com/RosaSabater/fake-netflix-b.git"
   },
+<<<<<<< HEAD
   "keywords": [],
+=======
+>>>>>>> 81a2486e21b4209ff01440c77b1b8f80c10422a6
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/RosaSabater/fake-netflix-b/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/RosaSabater/fake-netflix-b#readme"
+=======
+  "homepage": "https://github.com/RosaSabater/fake-netflix-b#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.11"
+  }
+>>>>>>> 81a2486e21b4209ff01440c77b1b8f80c10422a6
 }
