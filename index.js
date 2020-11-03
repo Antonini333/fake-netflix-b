@@ -3,6 +3,7 @@ const app = express();
 const cors = require('./middleware/cors');
 
 
+
 //Middleware
 app.use(express.json());
 app.use(cors);
