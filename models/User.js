@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 const UserSchema = new mongoose.Schema({
 
     name: {
@@ -11,7 +12,8 @@ const UserSchema = new mongoose.Schema({
         type: Number
     },
     email: {
-        type: String
+        type: String,
+        unique: true
     },
     password: {
         type: String
@@ -22,6 +24,9 @@ const UserSchema = new mongoose.Schema({
     credit_card: {
         type: Number
     },
+    token: {
+        type: String
+    },
     role: {
         type: String,
         enum : ['user','admin'],
@@ -29,18 +34,22 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
-UserSchema.virtual('token').get(function (){
-    const user = this;
-    return{
-        token: user._id
-    }
-})
-
 UserSchema.methods.toJSON = function () {
     const user = this.toObject();
     delete user.__v;
     return user;
 };
+
+UserSchema.pre('save', async function (next){
+    try {
+
+    const user = this;
+    user.password = await bcrypt.hash(user.password, 9);
+    next()
+    } catch (error){
+        console.error(error)
+    }
+});
 
 const UserModel = mongoose.model("user", UserSchema);
 module.exports = UserModel;
