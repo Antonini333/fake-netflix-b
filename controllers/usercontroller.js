@@ -73,18 +73,18 @@ const UserController = {
     
             await UserModel.findOneAndUpdate({ token: token }, { token: null });
     
-            res.send('Session finished.')
+            res.send({message: 'Session finished'});
     
         } catch (error) {
             console.log(error)
-            res.status(500).send({ message: 'No se ha podido cerrar sesión.' });
+            res.status(500).send({ message: 'Something went wrong logging out' });
         }
     },
 
 
     async Delete(req,res) {
         try{
-            const user = await UserModel.findByIdAndDelete(req.params._id);
+            const user = await UserModel.findByIdAndDelete(req.params.id);
             res.send({
                 message: "User successfully deleted", user})
         } catch (error) {
