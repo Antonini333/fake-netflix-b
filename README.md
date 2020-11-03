@@ -115,3 +115,64 @@ La película más popular es:
 
 **Método**: GET
 <br>**Descripción**: Devuelve las películas cuyo array de géneros contenga la id dada.
+
+
+## Controles de Usuario
+
+Nuestro backend provee una serie de endpoints con los que gestionar los datos del usuario.
+
+
+## user/register
+
+**Método**: POST
+<br>**Descripción**: Una vez rellenados los campos requeridos (Name, surname, age, email, password, address, credit_card y role), se registrará al usuario en nuestra base de datos con la contraseña encriptada, para mayor seguridad.
+
+**Body de ejemplo**:
+
+    - "name": "Elon",
+    - "surname": "Musk",
+    - "age": "49", 
+    - "email":"elon@gmail.com",
+    - "password": "1234abc!",
+    - "address": "Main Street, 8",
+    - "credit_card": "40608179897966452", 
+    - "role": "admin"
+<br>
+
+## user/login
+
+**Método**: POST
+<br>**Descripción**: Una vez rellenados los campos requeridos (email y password), son devueltos los datos completos del usuario previamente registrado. También se añade un token único a cada usuario para futuros accesos a las rutas restringidas.
+
+**Body de ejemplo**:
+   - "email":"elon@gmail.com",
+    - "password": "1234abc!",
+
+<br>
+**Respuesta del body**:
+
+    - "role": "admin",
+    - "name": "Elon",
+    - "surname": "Musk",
+    - "age": 49,
+    - "email": "elon@gmail.com",
+    - "password": "$2a$09$OIL5xa5cIZd6rkuPmMVPceImH0BpqzskHwZlfMyRr8Ja6FyQ1f45.",
+    - "address": "Main Street, 8",
+    - "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTFjNjJlYTFjMDc2NDI4MTE2OTA5ZCIsImlhdCI6MTYwNDQzNzU2OCwiZXhwIjoxNjA3MDI5NTY4fQ.Dbnh9ZaHupxeIHxEdr3xb5sLGLEYNfQjGDlAV2FIHOI",
+    - "credit_card": 40608179897966450
+<br>
+
+## user/logout
+
+**Método**: POST
+<br>**Descripción**: Este endpoint destruye el token de usuario, negando acceso a todas las rutas restringidas.
+Al volver a logearse se consigue un nuevo token.
+
+<br>
+
+## user/delete
+
+**Método**: DELETE
+<br>**Descripción**: Este endpoint destruye los datos del usuario de la base de datos.
+<br>
+
