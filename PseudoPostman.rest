@@ -11,13 +11,16 @@ GET {{url}}/showMoviesPopularity
 GET {{url}}/showMoviesNewest
 
 ###
-GET {{url}}/showUpcoming
+GET {{url}}/showMoviesOldest
 
 ###
-GET {{url}}/searchByGenre
+GET {{url}}/showUpcoming
 
 ###
 GET {{url}}/searchByTitle?title=harry
 
 ###
 GET {{url}}/searchById?id=697064
+
+###
+GET {{url}}/searchByGenre?genre=53
