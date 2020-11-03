@@ -1,42 +1,11 @@
-const mongoose = require('mongoose');
-const UserSchema = new mongoose.Schema({
 
-    name: {
-        type: String
-    },
-    surname: {
-        type: String
-    },
-    age: {
-        type: Number
-    },
-    email: {
-        type: String
-    },
-    password: {
-        type: String
-    },
-    address: {
-        type: String
-    },
-    credit_card: {
-        type: Number
-    },
-    token: {
-        type: String
-    },
-    role: {
-        type: String,
-        enum : ['user','admin'],
-        default: 'user'
-    }
-});
+const router = require ("express").Router();
+const UserController = require("../controllers/usercontroller");
 
-UserSchema.methods.toJSON = function () {
-    const user = this.toObject();
-    delete user.__v;
-    return user;
-};
+router.post('/user/register', UserController.Register);
+router.post('/user/login', UserController.Login);
+router.post('/user/logout', UserController.Logout);
+router.delete('/user/delete', UserController.Delete);
+router.get('/user/Profile', UserController.Profile);
 
-const UserModel = mongoose.model("user", UserSchema);
-module.exports = UserModel;
+module.exports = router;
