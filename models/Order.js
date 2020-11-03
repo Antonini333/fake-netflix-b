@@ -24,6 +24,12 @@ const OrderSchema = new mongoose.Schema({
     }
 });
 
+OrderSchema.methods.toJSON = function () {
+    const order = this.toObject();
+    delete order.__v;
+    return order;
+};
+
 const OrderModel = mongoose.model('order', MovieSchema);
 
 module.exports = OrderModel;
