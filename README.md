@@ -19,10 +19,12 @@ La carpeta `Debug` guarda un archivo de un único uso `getDataFromApi`.
 
 <br>
 
+- Todas las llamadas devuelven un máximo de 30 películas.
+
 ## /showMovies
 
 **Método**: GET
-<br>**Descripción**: Devuelve todas las películas con un máximo de 30. 
+<br>**Descripción**: Devuelve todas las películas. 
 
 **Body**:
 
@@ -54,7 +56,7 @@ Fecha de salida de la película.
 ## /showMoviesPopularity
 
 **Método**: GET
-<br>**Descripción**: Devuelve las películas más populares de todas las películas en base de datos con un máximo de 30.
+<br>**Descripción**: Devuelve las películas más populares de todas las películas en base de datos.
 
 **Body de ejemplo**:
 
@@ -77,39 +79,39 @@ La película más popular es:
 ## /showMoviesNewest
 
 **Método**: GET
-<br>**Descripción**: Devuelve las películas más recientes de todas las películas en base de datos con un máximo de 30.
+<br>**Descripción**: Devuelve las películas más recientes de todas las películas en base de datos.
 
 <br>
 
 ## /showMoviesOldest
 
 **Método**: GET
-<br>**Descripción**: Devuelve las películas más antiguas de todas las películas en base de datos con un máximo de 30.
+<br>**Descripción**: Devuelve las películas más antiguas de todas las películas en base de datos.
 
 <br>
 
 ## /showUpcoming
 
 **Método**: GET
-<br>**Descripción**: Devuelve las películas que van a estrenarse próximamente con un máximo de 30.
+<br>**Descripción**: Devuelve las películas que van a estrenarse próximamente.
 
 <br>
 
 ## /searchByTitle?title=TÍTULOPELÍCULA
 
 **Método**: GET
-<br>**Descripción**: Devuelve las películas cuyo título sea el mismo o parecido al escrito con un máximo de 30.
+<br>**Descripción**: Devuelve las películas cuyo título sea el mismo o parecido al escrito.
 
 <br>
 
 ## /searchById?id=NÚMEROIDPELÍCULA
 
 **Método**: GET
-<br>**Descripción**: Devuelve las películas cuya id sea la misma a la escrita con un máximo de 30.
+<br>**Descripción**: Devuelve las películas cuya id sea la misma a la escrita.
 
 <br>
 
 ## /searchByGenre?genre=NÚMEROIDGÉNERO
 
 **Método**: GET
-<br>**Descripción**: Devuelve las películas cuyo array de géneros contenga la id dada con un máximo de 30.
+<br>**Descripción**: Devuelve las películas cuyo array de géneros contenga la id dada.
