@@ -102,7 +102,14 @@ La película más popular es:
 
 <br>
 
-## /searchById?id=IDPELÍCULA
+## /searchById?id=NÚMEROIDPELÍCULA
 
 **Método**: GET
 <br>**Descripción**: Devuelve las películas cuya id sea la misma a la escrita con un máximo de 30.
+
+<br>
+
+## /searchByGenre?genre=NÚMEROIDGÉNERO
+
+**Método**: GET
+<br>**Descripción**: Devuelve las películas cuyo array de géneros contenga la id dada con un máximo de 30.
