@@ -3,7 +3,7 @@
 Es un fake de Netflix hecho entre [Javier Garcia](https://github.com/javigarcias), [Rosa Sabater](https://github.com/RosaSabater) y [Pablo Antonini](https://github.com/Antonini333) que usa:
 
 - Frontend: 🌌 
-- Backend: 🔸 NodeJS + Express + Json Web Token
+- Backend: 🔸 NodeJS + Express + Json Web Token + Bcrypt
 - DB: 🍃 MongoDB 
 
 Durante el desarrollo hemos usado [este tablón de Trello]().
@@ -81,7 +81,28 @@ La película más popular es:
 
 <br>
 
+## /showMoviesOldest
+
+**Método**: GET
+<br>**Descripción**: Devuelve las películas más antiguas de todas las películas en base de datos con un máximo de 30.
+
+<br>
+
 ## /showUpcoming
 
 **Método**: GET
 <br>**Descripción**: Devuelve las películas que van a estrenarse próximamente con un máximo de 30.
+
+<br>
+
+## /searchByTitle?title=TÍTULOPELÍCULA
+
+**Método**: GET
+<br>**Descripción**: Devuelve las películas cuyo título sea el mismo o parecido al escrito con un máximo de 30.
+
+<br>
+
+## /searchById?id=IDPELÍCULA
+
+**Método**: GET
+<br>**Descripción**: Devuelve las películas cuya id sea la misma a la escrita con un máximo de 30.
