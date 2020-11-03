@@ -20,7 +20,7 @@ const showMovies = async (req, res) => {
 
     } catch (error) {
         console.log(error)
-        res.status(500).send({ message: 'No se han podido mostrar todas las películas.' });
+        res.status(400).send({ message: 'No se ha podido mostrar todas las películas.' });
     }
 };
 
@@ -47,7 +47,7 @@ const searchByPopularity = async (req, res) => {
 
     } catch (error) {
         console.log(error)
-        res.status(500).send({ message: 'No se han podido mostrar las películas más populares.' });
+        res.status(400).send({ message: 'No se ha podido mostrar las películas más populares.' });
     }
 };
 
@@ -62,7 +62,8 @@ const searchByNewest = async (req, res) => {
             limit = 30
         };
 
-        // busco todas las películas que 
+        // busco todas las películas que sean less than or equal al día de hoy
+        // luego las ordeno por release_date con .sort
         let movies = await MovieModel.find({
             release_date:
                 { $lte: new Date() }
@@ -76,7 +77,7 @@ const searchByNewest = async (req, res) => {
 
     } catch (error) {
         console.log(error)
-        res.status(500).send({ message: 'No se han podido mostrar las películas más recientes.' });
+        res.status(400).send({ message: 'No se ha podido mostrar las películas más recientes.' });
     }
 };
 
@@ -91,7 +92,8 @@ const showUpcoming = async (req, res) => {
             limit = 30
         };
 
-        // busco todas las peliculas, y las ordeno por popularity con .sort
+        // busco todas las peliculas greater than or equal al día de hoy, 
+        // y las ordeno por release_date con .sort
         let movies = await MovieModel.find({
             release_date:
                 { $gte: new Date() }
@@ -104,19 +106,55 @@ const showUpcoming = async (req, res) => {
 
     } catch (error) {
         console.log(error)
-        res.status(500).send({ message: 'No se han podido mostrar los próximos estrenos.' });
+        res.status(400).send({ message: 'No se ha podido mostrar los próximos estrenos.' });
     }
 };
 
 
-// const searchByActor = async (req, res) => {
+const searchByTitle = async (req, res) => {
+
+    try {
+        let query = req.query;
+        let limit = parseInt(query.limit);
+
+        if (!limit || limit >= 30) {
+            limit = 30
+        };
+
+        let title = new RegExp(req.query.title, 'i');
+
+        let movies = await MovieModel.find({title})
+        .limit(limit)
+    
+        res.send(movies)
+
+    } catch (error) {
+        console.log(error)
+        res.status(400).send({ message: 'No se encontró nada.' });
+    }
+};
+
+
+// const searchById = async (req, res) => {
 
 //     try {
+//         let query = req.query;
+//         let limit = parseInt(query.limit);
 
+//         if (!limit || limit >= 30) {
+//             limit = 30
+//         };
+
+//         let id = new RegExp(req.query.id);
+
+//         let movies = await MovieModel.find({id})
+//         .limit(limit)
+    
+//         res.send(movies)
 
 //     } catch (error) {
 //         console.log(error)
-//         res.status(500).send({ message: '' });
+//         res.status(400).send({ message: 'No se encontró nada.' });
 //     }
 // };
 
@@ -125,36 +163,15 @@ const showUpcoming = async (req, res) => {
 
 //     try {
 
-
 //     } catch (error) {
 //         console.log(error)
-//         res.status(500).send({ message: '' });
+//         res.status(400).send({ message: 'No se encontró nada.' });
 //     }
 // };
 
 
-// const searchByTitle = async (req, res) => {
-
-//     try {
 
 
-//     } catch (error) {
-//         console.log(error)
-//         res.status(500).send({ message: '' });
-//     }
-// };
 
 
-// const searchById = async (req, res) => {
-
-//     try {
-
-
-//     } catch (error) {
-//         console.log(error)
-//         res.status(500).send({ message: '' });
-//     }
-// };
-
-
-module.exports = { showMovies, searchByPopularity, searchByNewest, showUpcoming };
+module.exports = { showMovies, searchByPopularity, searchByNewest, showUpcoming, searchByTitle};

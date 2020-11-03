@@ -12,3 +12,12 @@ GET {{url}}/showMoviesNewest
 
 ###
 GET {{url}}/showUpcoming
+
+###
+GET {{url}}/searchByGenre
+
+###
+GET {{url}}/searchByTitle?title=harry
+
+###
+GET {{url}}/searchById?id=697064

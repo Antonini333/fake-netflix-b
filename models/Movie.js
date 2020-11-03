@@ -22,7 +22,7 @@ const MovieSchema = new mongoose.Schema({
         type: String
     },
     genre_ids: {
-        type: Array
+        type: [Number]
     },
     overview: {
         type: String
