@@ -1,5 +1,5 @@
 const router = require ("express").Router();
-const { showMovies, searchByPopularity, searchByNewest, showUpcoming, searchByTitle, searchById } = require("../controllers/MovieController.js");
+const { showMovies, searchByPopularity, searchByNewest, showUpcoming, searchByTitle } = require("../controllers/moviecontroller");
 
 
 router.get('/showMovies', showMovies);
