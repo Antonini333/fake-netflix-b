@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const UserController = {
 
 
-    async getAll(req,res) { // role admin {SEARCH}
+    async getAll(req,res) { 
     try {
     const users = await UserModel.find();
     res.send(users);
@@ -17,7 +17,7 @@ const UserController = {
 }
 },
 
-    async Register(req, res){  // 
+    async Register(req, res){  
          try {
          const user = await UserModel.create(req.body);
          res.send({ user, message: 'User successfully created'});
@@ -32,7 +32,8 @@ const UserController = {
         try{
         let user = await UserModel.findOne({
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            token: user._id
         });
         
         res.send({user, message: 'Login succesful'});

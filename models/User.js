@@ -22,15 +22,19 @@ const UserSchema = new mongoose.Schema({
     credit_card: {
         type: Number
     },
-    token: {
-        type: String
-    },
     role: {
         type: String,
         enum : ['user','admin'],
         default: 'user'
     }
 });
+
+UserSchema.virtual('token').get(function (){
+    const user = this;
+    return{
+        token: user._id
+    }
+})
 
 UserSchema.methods.toJSON = function () {
     const user = this.toObject();
