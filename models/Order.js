@@ -6,20 +6,22 @@ const OrderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    idMovie: {
+    movieId: {
         type: Number,
         required: true
     },
     rentalDate: {
         type: Date
     },
+    rentalEndDate: {
+        type: Date
+    },
     rentalState: {
         type: String,
+        enum: ["rented", "available"],
         default: "rented"
-    },
-    price: {
-        type: number
-    },
+    
+    }
 });
 
 const OrderModel = mongoose.model('order', MovieSchema);
