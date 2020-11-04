@@ -12,12 +12,14 @@ const OrderController = {
         let movie = await MovieModel.findOne({
             id: req.body.movieId
         })
-        //console.log(movieId);
-        console.log(movie);
+        let date = Date.now()
+        let endDate = date + 172800000
         try {
             const order = await OrderModel({
                 userId: user._id,
-                movieId: movie._id
+                movieId: movie._id,
+                rentalDate: Date.now(),
+                rentalEndDate: endDate
             }).save();
                 res.status(201).send(order);
     } catch (error) {
@@ -37,6 +39,36 @@ const OrderController = {
             res.status(500).send({
             error,
             message: 'There was a problem trying to retrive the orders.'
+        })
+        }
+    },
+    async showUser (req,res){
+        try {
+            const userOrders = await OrderModel.find({
+                userId: req.params.userId
+            });
+            res.status(201).send({userOrders});
+        } catch (error) {
+            console.error(error);
+            res.status(500).send({
+            error,
+            message: 'There was a problem trying to retrive the orders.'
+        })
+        }
+    },
+    async cancelOrder (req, res){
+        try {
+            await OrderModel.findByIdAndDelete({
+                _id:req.params._id
+            });
+            res.status(201).send({
+                message: `El alquiler ha sido cancelado exitosamente`
+            });         
+        } catch (error) {
+            console.error(error);
+            res.status(500).send({
+            error,
+            message: 'There was a problem trying cancel order.'
         })
         }
     }
