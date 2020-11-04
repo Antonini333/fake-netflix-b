@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const UserController = {
 
 
-    async getAll(req,res) { 
+    async GetAll(req,res) { 
     try {
     const users = await UserModel.find();
     res.send(users);

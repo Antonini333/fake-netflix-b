@@ -1,16 +1,24 @@
-
 const router = require ("express").Router();
 const UserController = require("../controllers/usercontroller");
-const auth = require("../middleware/auth")
 
-router.get('/users', UserController.getAll) //CHECKED
 
-router.post('/user/register', UserController.Register); // CHECkED
-router.post('/user/login', UserController.Login); //CHECKED
-router.post('/user/logout', auth, UserController.Logout); // CHECKED
+//              --MIDDLEWARE--
+const auth = require("../middleware/auth"); //Checked
+const admin = require("../middleware/admin"); // Checked
+const checkadult = require ("../middleware/checkadult"); // Checked
 
-router.delete('/user/delete/:id', auth, UserController.Delete); // CHECKED
 
-//router.get('/user/Profile', UserController.Profile);
+//                --RUTAS--
+router.get('/users', UserController.GetAll) // Checked
+
+router.post('/user/register', UserController.Register); // Checked
+router.post('/user/login', UserController.Login); //Checked
+router.post('/user/logout', auth, UserController.Logout); // Checked
+
+router.delete('/user/delete/:id', auth, admin, UserController.Delete); // Checked
+
+
+
+//router.get('/user/Profile', UserController.Profile);  ¿ES NECESARIA?
 
 module.exports = router;
