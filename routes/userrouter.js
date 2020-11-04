@@ -1,8 +1,10 @@
-
 const router = require ("express").Router();
 const UserController = require("../controllers/usercontroller");
+
+///MIDDLEWARE
 const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");
+const checkadult = require ("../middleware/checkadult");
 
 
 

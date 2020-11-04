@@ -1,6 +1,3 @@
-const UserModel = require('../models/User');
-const jwt = require ('jsonwebtoken');
-
 const admin = async(req,res,next) => {
     try{
 
@@ -11,7 +8,7 @@ const admin = async(req,res,next) => {
       next();
     } catch (error){
       console.error(error)
-      res.status(401).send({error, message: 'ERROR.'})
+      res.status(401).send({error, message: 'Check out your role, must be admin or user.'})
     }
   }
   
