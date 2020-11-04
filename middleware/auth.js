@@ -1,11 +1,11 @@
 const jwt = require ('jsonwebtoken');
-const User = require('../models/User');
+const UserModel = require('../models/User');
 
 const auth = async(req,res,next) => {
     try{
       const token = req.headers.authorization;
       jwt.verify(token,'mymotherpetsme');
-      const user = await User.findOne({token:token});
+      const user = await UserModel.findOne({token:token});
       console.log(user)
       if(!user){
         return res.status(401).send({message: 'You are not authorized.'})
