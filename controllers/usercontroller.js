@@ -52,7 +52,6 @@ const UserController = {
                     surname: userFound.surname,
                     age: userFound.age,
                     email: userFound.email,
-                    password: userFound.password,
                     address: userFound.address,
                     token: userFound.token,
                     credit_card: userFound.credit_card
