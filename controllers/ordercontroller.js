@@ -1,6 +1,5 @@
 const OrderModel = require('../models/Order');
 const MovieModel = require('../models/Movie');
-const UserModel = require('../models/User');
 const dayjs = require ("dayjs");
 
 
@@ -41,12 +40,9 @@ const OrderController = {
     },
     async showUser(req, res) {
         try {
-            const userOrders = await OrderModel.find({
-                userId: req.params.userId
-            });
-            res.status(201).send({
-                userOrders
-            });
+
+            res.send(req.user)
+            
         } catch (error) {
             console.error(error);
             res.status(500).send({
@@ -54,6 +50,7 @@ const OrderController = {
                 message: 'There was a problem trying to retrive the orders.'
             })
         }
+       
     },
     async cancelOrder(req, res) {
         try {
