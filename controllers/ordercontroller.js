@@ -72,8 +72,6 @@ const OrderController = {
         const order = await OrderModel.findById(req.body._id);
         const newRentalEnd = dayjs(order.rentalEndDate).add(req.body.days, 'day');
         
-        
-
         try {
             await OrderModel.findOneAndUpdate({
                 _id: req.body._id

@@ -176,3 +176,47 @@ Al volver a logearse se consigue un nuevo token.
 <br>**Descripción**: Este endpoint destruye los datos del usuario de la base de datos.
 <br>
 
+## Controles de Pedido
+
+Nuestro backend provee una serie de endpoints con los que gestionar los pedidos.
+
+## order/rent
+
+**Método**: PUT
+<br>**Descripción**: Este endpoint crea el pedido pasandole por el body el id de la película. Genera un pedido con la fecha de alquiler y automáticamente nos indica la fecha de devolución dos dias después. El pedido incluye el objeto completo del usuario y la movie. Para ello, es necesario que el usuario esté logeado.
+
+**Body de ejemplo**:
+   - "movieId": 741074
+    
+<br>
+
+## order/showAll
+
+**Método**: GET
+<br>**Descripción**: Este endpoint nos muestra todos los pedidos creados. Para ello, es necesario que el usuario tenga el rol de Admin y este logeado.
+    
+<br>
+
+## order/showUser
+
+**Método**: GET
+<br>**Descripción**: Este endpoint nos muestra todos los pedidos creados del usuario logueado.
+    
+<br>
+
+## order/cancelOrder
+
+**Método**: DELETE
+<br>**Descripción**: Este endpoint elimina un pedido introduciendo por parametros el _id del pedido, parra ello el usuario tiene que estar logueado.
+    
+<br>
+
+## order/extendOrder
+
+**Método**: PUT
+<br>**Descripción**: Este endpoint nos añade los dias de extensión del alquiler que deseemos. Hay que pasarlos por body y para ello tendremos que estar logueados.
+
+**Body de ejemplo**:
+   - "days": 2
+    
+<br>
