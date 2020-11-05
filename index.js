@@ -22,3 +22,7 @@ app.listen(PORT, () => console.log('server running on port ' + PORT));
 // Routes
 app.use(require("./routes/movierouter"));
 app.use(require("./routes/userrouter"));
+app.use(require("./routes/orderrouter"));
+
+
+
