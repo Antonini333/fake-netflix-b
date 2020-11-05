@@ -6,16 +6,14 @@ const dayjs = require ("dayjs");
 
 const OrderController = {
     async rent(req, res) {
-        let user = await UserModel.findOne({
-            email: req.body.email
-        })
+
         let movie = await MovieModel.findOne({
             id: req.body.movieId
         })
         let endDate = dayjs().add(2, 'day')
         try {
             const order = await OrderModel({
-                userId: user._id,
+                userId: req.user._id,
                 movieId: movie._id,
                 rentalDate: Date.now(),
                 rentalEndDate: endDate
