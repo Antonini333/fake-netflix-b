@@ -1,26 +1,98 @@
 # @url = 
 @url = http://localhost:3000
 
-###
+################################################## PELICULAS
+@token = {{resLogin.response.body.token}}
 GET {{url}}/showMovies
+Authorization: {{token}}
 
 ###
 GET {{url}}/showMoviesPopularity
+Authorization: {{token}}
 
 ### 
 GET {{url}}/showMoviesNewest
+Authorization: {{token}}
 
 ###
 GET {{url}}/showMoviesOldest
+Authorization: {{token}}
 
 ###
 GET {{url}}/showUpcoming
+Authorization: {{token}}
 
 ###
 GET {{url}}/searchByTitle?title=harry
+Authorization: {{token}}
 
 ###
 GET {{url}}/searchById?id=697064
+Authorization: {{token}}
 
 ###
 GET {{url}}/searchByGenre?genre=53
+Authorization: {{token}}
+
+################################################## USUARIOS
+POST {{url}}/user/register
+Content-Type: application/json
+
+{
+    "name": "Rosa",
+    "surname": "Sabater",
+    "age": "28",
+    "email": "rosa@gmail.com",
+    "password": "Abc123",
+    "address": "Calle Falsa, 123",
+    "credit_card": "6589659856897845"
+}
+
+###
+# @name resLogin
+POST {{url}}/user/login
+Content-Type: application/json
+
+{
+    "email": "rosa@gmail.com",
+    "password": "Abc123"
+}
+
+###
+POST {{url}}/user/logout
+Authorization: {{token}}
+
+###
+DELETE {{url}}/user/delete/5fa3c88382c5142ce83dd0d8
+Authorization: {{token}}
+
+###
+GET {{url}}/users
+Authorization: {{token}}
+
+########################################## PEDIDOS
+POST {{url}}/order/rent
+Authorization: {{token}}
+
+{
+    "userId": "5fa3c88382c5142ce83dd0d8",
+    "movieId": "5fa0528a8fec495aacf1631a",
+    "rentalDate": "2020-11-05T00:00:00.000Z",
+    "rentalEndDate": "2020-11-08T00:00:00.000Z"
+}
+
+###
+GET {{url}}/order/show
+Authorization: {{token}}
+
+###
+GET {{url}}/order/show/USUARIOID
+Authorization: {{token}}
+
+###
+DELETE {{url}}/order/IDPEDIDO
+Authorization: {{token}}
+
+###
+PUT {{url}}/order
+Authorization: {{token}}
