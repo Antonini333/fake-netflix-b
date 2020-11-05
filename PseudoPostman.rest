@@ -1,8 +1,45 @@
 # @url = 
 @url = http://localhost:3000
 
-################################################## PELICULAS
+################################################## USUARIOS
+POST {{url}}/user/register
+Content-Type: application/json
+
+{
+    "name": "Rosa",
+    "surname": "Sabater",
+    "age": "28",
+    "email": "rosa@gmail.com",
+    "password": "Abc123",
+    "address": "Calle Falsa, 123",
+    "credit_card": "6589659856897845"
+}
+
+###
+# @name resLogin
+POST {{url}}/user/login
+Content-Type: application/json
+
+{
+    "email": "rosa@gmail.com",
+    "password": "Abc123"
+}
+
+###
 @token = {{resLogin.response.body.token}}
+POST {{url}}/user/logout
+Authorization: {{token}}
+
+###
+DELETE {{url}}/user/delete/5fa3c88382c5142ce83dd0d8
+Authorization: {{token}}
+
+###
+GET {{url}}/users
+Authorization: {{token}}
+
+################################################## PELICULAS
+
 GET {{url}}/showMovies
 Authorization: {{token}}
 
@@ -34,41 +71,6 @@ Authorization: {{token}}
 GET {{url}}/searchByGenre?genre=53
 Authorization: {{token}}
 
-################################################## USUARIOS
-POST {{url}}/user/register
-Content-Type: application/json
-
-{
-    "name": "Rosa",
-    "surname": "Sabater",
-    "age": "28",
-    "email": "rosa@gmail.com",
-    "password": "Abc123",
-    "address": "Calle Falsa, 123",
-    "credit_card": "6589659856897845"
-}
-
-###
-# @name resLogin
-POST {{url}}/user/login
-Content-Type: application/json
-
-{
-    "email": "rosa@gmail.com",
-    "password": "Abc123"
-}
-
-###
-POST {{url}}/user/logout
-Authorization: {{token}}
-
-###
-DELETE {{url}}/user/delete/5fa3c88382c5142ce83dd0d8
-Authorization: {{token}}
-
-###
-GET {{url}}/users
-Authorization: {{token}}
 
 ########################################## PEDIDOS
 POST {{url}}/order/rent
