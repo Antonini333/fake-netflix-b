@@ -69,7 +69,7 @@ const UserController = {
 
     async Logout (req,res) {
         try {
-            const token = req.headers.authorization;
+            const token = req.header('Authorization').replace('Bearer ', '');
     
             await UserModel.findOneAndUpdate({ token: token }, { token: null });
     
@@ -84,7 +84,8 @@ const UserController = {
 
     async Delete(req,res) {
         try{
-            const user = await UserModel.findByIdAndDelete(req.params.id);
+            const token = req.header('Authorization').replace('Bearer ', '');
+            const user = await UserModel.findOneAndDelete({ token: token });
             res.send({
                 message: "User successfully deleted", user})
         } catch (error) {

@@ -15,7 +15,7 @@ router.post('/user/register', UserController.Register); // Checked
 router.post('/user/login', UserController.Login); //Checked
 router.post('/user/logout', auth, UserController.Logout); // Checked
 
-router.delete('/user/delete/:id', auth, admin, UserController.Delete); // Checked
+router.delete('/user/delete', auth, admin, UserController.Delete); // Checked
 
 
 
