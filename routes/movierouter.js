@@ -5,7 +5,7 @@ const { showMovies, searchByPopularity, searchByNewest, showUpcoming, searchByTi
 
 const auth = require("../middleware/auth");
 
-router.get('/showMovies', auth, showMovies);
+router.get('/showMovies', showMovies);
 router.get('/showMoviesPopularity', auth, searchByPopularity);
 router.get('/showMoviesNewest', auth, searchByNewest);
 router.get('/showMoviesOldest', auth, searchByOldest);
