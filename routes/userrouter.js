@@ -17,7 +17,7 @@ router.post('/user/logout', auth, UserController.Logout); // Checked
 
 router.delete('/user/delete', auth, admin, UserController.Delete); // Checked
 
-
+router.get('/user/compruebaEmail', UserController.compruebaEmail);
 
 //router.get('/user/Profile', UserController.Profile);  ¿ES NECESARIA?
 
