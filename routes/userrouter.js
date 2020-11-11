@@ -9,7 +9,7 @@ const checkadult = require ("../middleware/checkadult"); // Checked
 
 
 //                --RUTAS--
-router.get('/users', UserController.GetAll) // Checked
+router.get('/users', auth, admin, UserController.GetAll) // Checked
 
 router.post('/user/register', UserController.Register); // Checked
 router.post('/user/login', UserController.Login); //Checked
