@@ -94,6 +94,24 @@ const UserController = {
                 error
             })
         }
+    },
+
+    async compruebaEmail(req,res) {
+
+        console.log(req.query.email)
+
+        const email = await UserModel.findOne({
+            email: req.query.email
+        })
+
+        if (email === null) {
+            res.send({existe: false})
+        }else {
+            res.send({existe: true})
+        }
+
+        console.log(email)
+
     }
 
 }

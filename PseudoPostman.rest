@@ -38,6 +38,9 @@ Authorization: {{token}}
 GET {{url}}/users
 Authorization: {{token}}
 
+###
+GET {{url}}/user/compruebaEmail?email=rosa@gmail.com
+
 ################################################## PELICULAS
 
 GET {{url}}/showMovies
