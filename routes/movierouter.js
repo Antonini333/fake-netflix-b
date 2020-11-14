@@ -10,7 +10,7 @@ router.get('/showMoviesPopularity', searchByPopularity);
 router.get('/showMoviesNewest', searchByNewest);
 router.get('/showMoviesOldest', searchByOldest);
 router.get('/showUpcoming', showUpcoming);
-router.get('/searchByTitle',searchByTitle);
+router.get('/searchByTitle', searchByTitle);
 router.get('/searchById', searchById);
 router.get('/searchByGenre', searchByGenre);
 
