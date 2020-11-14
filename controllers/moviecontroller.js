@@ -10,8 +10,8 @@ const showMovies = async (req, res) => {
 
         // el limit es el número que va al final de la url de PseudoPostman
         // si no hay limit o el limite es mayor o igual a 30, se mantiene en 30
-        if (!limit || limit >= 30) {
-            limit = 30
+        if (!limit || limit >= 100) {
+            limit = 100
         };
 
         let movies = await MovieModel.find().limit(limit);
@@ -31,8 +31,8 @@ const searchByPopularity = async (req, res) => {
         let query = req.query;
         let limit = parseInt(query.limit);
 
-        if (!limit || limit >= 30) {
-            limit = 30
+        if (!limit || limit >= 100) {
+            limit = 100
         };
 
         // busco todas las peliculas, y las ordeno por popularity con .sort
@@ -58,8 +58,8 @@ const searchByNewest = async (req, res) => {
         let query = req.query;
         let limit = parseInt(query.limit);
 
-        if (!limit || limit >= 30) {
-            limit = 30
+        if (!limit || limit >= 100) {
+            limit = 100
         };
 
         // busco todas las películas que sean less than or equal al día de hoy
@@ -88,8 +88,8 @@ const searchByOldest = async (req, res) => {
         let query = req.query;
         let limit = parseInt(query.limit);
 
-        if (!limit || limit >= 30) {
-            limit = 30
+        if (!limit || limit >= 100) {
+            limit = 100
         };
 
         // busco todas las películas que sean less than or equal al día de hoy
@@ -118,8 +118,8 @@ const showUpcoming = async (req, res) => {
         let query = req.query;
         let limit = parseInt(query.limit);
 
-        if (!limit || limit >= 30) {
-            limit = 30
+        if (!limit || limit >= 100) {
+            limit = 100
         };
 
         // busco todas las peliculas greater than or equal al día de hoy, 
@@ -147,8 +147,8 @@ const searchByTitle = async (req, res) => {
         let query = req.query;
         let limit = parseInt(query.limit);
 
-        if (!limit || limit >= 30) {
-            limit = 30
+        if (!limit || limit >= 100) {
+            limit = 100
         };
 
         let title = new RegExp(req.query.title, 'i');
@@ -171,8 +171,8 @@ const searchById = async (req, res) => {
         let query = req.query;
         let limit = parseInt(query.limit);
 
-        if (!limit || limit >= 30) {
-            limit = 30
+        if (!limit || limit >= 100) {
+            limit = 100
         };
 
         let id = req.query.id;
@@ -196,8 +196,8 @@ const searchByGenre = async (req, res) => {
         let limit = parseInt(query.limit);
         let idGenre = parseInt(req.query.genre);
 
-        if (!limit || limit >= 30) {
-            limit = 30
+        if (!limit || limit >= 100) {
+            limit = 100
         };
 
 
