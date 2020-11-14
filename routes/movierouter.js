@@ -5,14 +5,14 @@ const { showMovies, searchByPopularity, searchByNewest, showUpcoming, searchByTi
 
 const auth = require("../middleware/auth");
 
-router.get('/showMovies', auth, showMovies);
-router.get('/showMoviesPopularity', auth, searchByPopularity);
-router.get('/showMoviesNewest', auth, searchByNewest);
-router.get('/showMoviesOldest', auth, searchByOldest);
-router.get('/showUpcoming', auth, showUpcoming);
-router.get('/searchByTitle', auth, searchByTitle);
-router.get('/searchById', auth, searchById);
-router.get('/searchByGenre', auth, searchByGenre);
+router.get('/showMovies', showMovies);
+router.get('/showMoviesPopularity', searchByPopularity);
+router.get('/showMoviesNewest', searchByNewest);
+router.get('/showMoviesOldest', searchByOldest);
+router.get('/showUpcoming', showUpcoming);
+router.get('/searchByTitle',searchByTitle);
+router.get('/searchById', searchById);
+router.get('/searchByGenre', searchByGenre);
 
 
 
