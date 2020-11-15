@@ -2,11 +2,11 @@
 
 Es un fake de Netflix hecho entre [Javier Garcia](https://github.com/javigarcias), [Rosa Sabater](https://github.com/RosaSabater) y [Pablo Antonini](https://github.com/Antonini333) que usa:
 
-- Frontend: 🌌 
-- Backend: 🔸 NodeJS + Express + Json Web Token + Bcrypt
+- Frontend: 🌌 [Link al repo](https://github.com/javigarcias/fake-netflix-f)
+- Backend: 🔸 NodeJS + Express + Mongoose + Json Web Token + Bcrypt
 - DB: 🍃 MongoDB 
 
-Durante el desarrollo hemos usado [este tablón de Trello]().
+Durante el desarrollo hemos usado [este tablón de Trello](https://trello.com/b/6E7w9ipq/netflix-20).
 
 
 <br>
