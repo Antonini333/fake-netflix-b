@@ -12,7 +12,7 @@ const OrderController = {
         let endDate = dayjs().add(2, 'day')
         try {
             const order = await OrderModel({
-                userId: req.user._id,
+                userId: req.body.userId,
                 movieId: movie._id,
                 rentalDate: Date.now(),
                 rentalEndDate: endDate
