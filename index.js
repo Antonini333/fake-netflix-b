@@ -19,6 +19,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('server running on port ' + PORT));
 
 
+app.options('/*', (req, res) => res.send());
+
 // Routes
 app.use(require("./routes/movierouter"));
 app.use(require("./routes/userrouter"));
