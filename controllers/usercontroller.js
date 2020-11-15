@@ -54,7 +54,8 @@ const UserController = {
                     email: userFound.email,
                     address: userFound.address,
                     token: userFound.token,
-                    credit_card: userFound.credit_card
+                    credit_card: userFound.credit_card,
+                    userId: userFound._id
             
                 });
             }else{
