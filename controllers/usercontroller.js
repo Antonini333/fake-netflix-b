@@ -39,7 +39,7 @@ const UserController = {
         
             })
         }else{
-            const isMatch = await bcrypt.compare(req.body.password, userFound.password); console.log(isMatch, req.body.password, userFound)
+            const isMatch = await bcrypt.compare(req.body.password, userFound.password); 
             if(isMatch){
 
                 const token = jwt.sign({id: userFound.id }, "mymotherpetsme", {expiresIn: '30d'})
