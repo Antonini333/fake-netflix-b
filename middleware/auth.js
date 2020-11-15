@@ -13,7 +13,7 @@ const auth = async (req, res, next) => {
 
 		jwt.verify(token, 'mymotherpetsme');
 		const user = await UserModel.findOne({ token: token });
-		console.log(user)
+		
 		if (!user) {
 			return res.status(401).send({ message: 'You got no token.' })
 		}

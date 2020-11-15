@@ -98,8 +98,6 @@ const UserController = {
 
     async compruebaEmail(req,res) {
 
-        console.log(req.query.email)
-
         const email = await UserModel.findOne({
             email: req.query.email
         })
@@ -109,8 +107,6 @@ const UserController = {
         }else {
             res.send({existe: true})
         }
-
-        console.log(email)
 
     }
 

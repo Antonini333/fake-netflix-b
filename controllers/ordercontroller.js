@@ -40,8 +40,8 @@ const OrderController = {
     },
     async showUser(req, res) {
         try {
-
-            res.send(req.user)
+            const orders = await OrderModel.find({userId:req.user._id})
+            res.send(orders)
             
         } catch (error) {
             console.error(error);
