@@ -2,11 +2,11 @@
 
 Es un fake de Netflix hecho entre [Javier Garcia](https://github.com/javigarcias), [Rosa Sabater](https://github.com/RosaSabater) y [Pablo Antonini](https://github.com/Antonini333) que usa:
 
-- Frontend: 🌌 
-- Backend: 🔸 NodeJS + Express + Json Web Token + Bcrypt
+- Frontend: 🌌 [Link al repo](https://github.com/javigarcias/fake-netflix-f)
+- Backend: 🔸 NodeJS + Express + Mongoose + Json Web Token + Bcrypt
 - DB: 🍃 MongoDB 
 
-Durante el desarrollo hemos usado [este tablón de Trello]().
+Durante el desarrollo hemos usado [este tablón de Trello](https://trello.com/b/8T6U3vMQ/app-netflix-fake).
 
 
 <br>
@@ -117,6 +117,10 @@ La película más popular es:
 <br>**Descripción**: Devuelve las películas cuyo array de géneros contenga la id dada.
 
 
+<br>
+
+
+
 ## Controles de Usuario
 
 Nuestro backend provee una serie de endpoints con los que gestionar los datos del usuario.
@@ -137,6 +141,7 @@ Nuestro backend provee una serie de endpoints con los que gestionar los datos de
     - "address": "Main Street, 8",
     - "credit_card": "40608179897966452", 
     - "role": "admin"
+    
 <br>
 
 ## user/login
@@ -149,6 +154,7 @@ Nuestro backend provee una serie de endpoints con los que gestionar los datos de
     - "password": "1234abc!",
 
 <br>
+
 **Respuesta del body**:
 
     - "role": "admin",
@@ -174,7 +180,11 @@ Al volver a logearse se consigue un nuevo token.
 
 **Método**: DELETE
 <br>**Descripción**: Este endpoint destruye los datos del usuario de la base de datos.
+
+
 <br>
+
+
 
 ## Controles de Pedido
 

@@ -147,8 +147,8 @@ const searchByTitle = async (req, res) => {
         let query = req.query;
         let limit = parseInt(query.limit);
 
-        if (!limit || limit >= 100) {
-            limit = 100
+        if (!limit || limit >= 500) {
+            limit = 500
         };
 
         let title = new RegExp(req.query.title, 'i');
