@@ -6,7 +6,7 @@ Es un fake de Netflix hecho entre [Javier Garcia](https://github.com/javigarcias
 - Backend: 🔸 NodeJS + Express + Mongoose + Json Web Token + Bcrypt
 - DB: 🍃 MongoDB 
 
-Durante el desarrollo hemos usado [este tablón de Trello](https://trello.com/b/6E7w9ipq/netflix-20).
+Durante el desarrollo hemos usado [este tablón de Trello](https://trello.com/b/8T6U3vMQ/app-netflix-fake).
 
 
 <br>
