@@ -27,7 +27,8 @@ const UserSchema = new mongoose.Schema({
         type: String
     },
     credit_card: {
-        type: Number
+        type: Number,
+        trim:true
     },
     token: {
         type: String,
